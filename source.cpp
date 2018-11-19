@@ -29,6 +29,20 @@ int main()
   cout << heading2 <<endl<<endl;
   print_board(gameBoard2);
 	
+  while (winner_test(hitPlayer1, hitPlayer2) == end_game){
+  	cout << "Player1 hits: " << hitPlayer1 << " Player 2 hits: " <<hitPlayer2<< endl;
+  	cout << "Player1 - Enter your move (ie. 0 4): ";
+  	fire(gameBoard2, numOfHits, end_game);
+  	hitPlayer1 += numOfHits;
+  	numOfHits =0;
+     if(end_game==true){break;}
+  	cout << "Player1 hits: " << hitPlayer1 << " Player 2 hits: " << hitPlayer2 << endl;
+  	cout << "Player2 - Enter your move (ie. 0 4): ";
+  	fire(gameBoard1, numOfHits, end_game);
+  	hitPlayer2 += numOfHits;
+  	numOfHits =0;
+}
+	
   return 0;
 }
 void get_board_data(ifstream& infile, gameBoard gameBoard1, gameBoard gameBoard2)
