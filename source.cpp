@@ -12,7 +12,24 @@ void gameintro();
 
 int main()
 {
-return 0;
+  ifstream infile;
+  gameBoard gameBoard1;
+  gameBoard gameBoard2;
+  string heading1, heading2;
+  heading1 = "PLAYER 1's Game Board";
+  heading2 = "PLAYER 2's Game Board";
+  int numOfHits =0;
+  bool end_game = false;
+  int hitPlayer1 = 0, hitPlayer2 = 0;
+  gameintro();
+
+  get_board_data(infile, gameBoard1, gameBoard2);
+  cout << heading1 << endl<<endl;
+  print_board(gameBoard1);
+  cout << heading2 <<endl<<endl;
+  print_board(gameBoard2);
+	
+  return 0;
 }
 void get_board_data(ifstream& infile, gameBoard gameBoard1, gameBoard gameBoard2)
 {
