@@ -31,3 +31,15 @@ void get_board_data(ifstream& infile, gameBoard gameBoard1, gameBoard gameBoard2
 	}
   infile.close();
 }
+
+void print_board(gameBoard currentGameBoard)
+{
+  for (int i = 0; i < 10; i++){
+    for (int j = 0; j < 10; j++){
+    cout << currentGameBoard[i][j];
+    }
+    cout << endl;
+  }
+  cout << endl;
+}
+
