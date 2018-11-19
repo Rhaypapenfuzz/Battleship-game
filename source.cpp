@@ -42,4 +42,12 @@ void print_board(gameBoard currentGameBoard)
   }
   cout << endl;
 }
-
+void gameintro()
+{
+  cout<<"Welcome to My Battleship Game\n";
+  cout<<"Dash(-) represent oceans, Hash'#' are your battleships\n";
+  cout<<"Your shooting target lies between 0 and 9 for both rows and columns\n";
+  cout<<"Type 10 10 at anytime to end prematurely\n";
+  cout<<"5 hits(H) represent a win\n";
+  cout<<"If you end prematurely, player with the highest hits(H) wins\n\n";
+}
