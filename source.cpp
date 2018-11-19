@@ -63,6 +63,26 @@ void get_board_data(ifstream& infile, gameBoard gameBoard1, gameBoard gameBoard2
   infile.close();
 }
 
+void fire(gameBoard currentGameBoard, int& numOfHits, bool& end_game)
+{
+  int position_x, position_y;
+  cin >> position_x >> position_y;
+  if (position_x && position_y == 10){
+    cout << "Thanks for playing Battleship" << endl;
+    end_game = true;
+  }
+  else if (currentGameBoard[position_x][position_y] == '#'){
+    cout << "HIT!!!!" << endl;
+    currentGameBoard[position_x][position_y] = 'H';
+    numOfHits = 1;
+  }
+  else{
+    cout << "miss" << endl;
+    if(currentGameBoard[position_x][position_y] == '-')
+    currentGameBoard[position_x][position_y] = '.';
+  }
+}
+
 void print_board(gameBoard currentGameBoard)
 {
   for (int i = 0; i < 10; i++){
