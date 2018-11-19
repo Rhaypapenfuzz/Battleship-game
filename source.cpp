@@ -20,7 +20,7 @@ int main()
   heading2 = "PLAYER 2's Game Board";
   int numOfHits =0;
   bool end_game = false;
-  int hitPlayer1 = 0, hitPlayer2 = 0;
+  int Player1hits = 0, Player2hits = 0;
   gameintro();
 
   get_board_data(infile, gameBoard1, gameBoard2);
@@ -29,23 +29,23 @@ int main()
   cout << heading2 <<endl<<endl;
   print_board(gameBoard2);
 	
-  while (winner_test(hitPlayer1, hitPlayer2) == end_game){
-  	cout << "Player1 hits: " << hitPlayer1 << " Player 2 hits: " <<hitPlayer2<< endl;
+  while (winner_test(Player1hits, Player2hits) == end_game){
+  	cout << "Player1 hits: " << Player1hits << " Player 2 hits: " <<Player2hits<< endl;
   	cout << "Player1 - Enter your move (ie. 0 4): ";
   	fire(gameBoard2, numOfHits, end_game);
-  	hitPlayer1 += numOfHits;
+  	Player1hits += numOfHits;
   	numOfHits =0;
      if(end_game==true){break;}
-  	cout << "Player1 hits: " << hitPlayer1 << " Player 2 hits: " << hitPlayer2 << endl;
+  	cout << "Player1 hits: " << Player1hits << " Player 2 hits: " << Player2hits << endl;
   	cout << "Player2 - Enter your move (ie. 0 4): ";
   	fire(gameBoard1, numOfHits, end_game);
-  	hitPlayer2 += numOfHits;
+  	Player2hits += numOfHits;
   	numOfHits =0;
-}
-	if(hitPlayer1>hitPlayer2){
+  }
+	if(Player1hits>Player2hits){
     	    cout<<"Player 1 wins\n";
   	}
-  	else if(hitPlayer2>hitPlayer1){
+  	else if(Player2hits>Player1hits){
     	   cout<<"Player 2 wins\n";
   	}
   	else{
