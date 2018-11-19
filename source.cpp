@@ -42,9 +42,23 @@ int main()
   	hitPlayer2 += numOfHits;
   	numOfHits =0;
 }
+	if(hitPlayer1>hitPlayer2){
+    	    cout<<"Player 1 wins\n";
+  	}
+  	else if(hitPlayer2>hitPlayer1){
+    	   cout<<"Player 2 wins\n";
+  	}
+  	else{
+  	  cout<<"It's a tie\n";
+ 	}
+  	cout << heading1 << endl;
+  	print_board(gameBoard1);
+  	cout << heading2 << endl;
+  	print_board(gameBoard2);
 	
   return 0;
 }
+
 void get_board_data(ifstream& infile, gameBoard gameBoard1, gameBoard gameBoard2)
 {
 	infile.open("infile.txt");
